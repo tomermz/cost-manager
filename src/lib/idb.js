@@ -25,8 +25,8 @@ function _convert(sum, from, to, rates) {
     const rFrom = rates[from];
     const rTo = rates[to];
     if (typeof rFrom !== "number" || typeof rTo !== "number") return sum;
-    const inUSD = sum * rFrom;
-    return inUSD / rTo;
+    const inUSD = sum / rFrom;
+    return inUSD * rTo;
 }
 
 function openNative(name = "CostManagerDB", version = 1) {
