@@ -119,12 +119,13 @@ export default function Home({ db, defaultCurrency }) {
                                 ))}
                             </TextField>
                             <TextField
-                                label="Date (optional)"
+                                label="Date"
                                 name="date"
                                 type="date"
                                 value={form.date}
                                 onChange={onChange}
                                 InputLabelProps={{ shrink: true }}
+                                required
                             />
                         </Box>
                         <TextField
@@ -149,12 +150,8 @@ export default function Home({ db, defaultCurrency }) {
                     <React.Fragment key={c.id}>
                         <ListItem>
                             <ListItemText
-                                primary={`${c.category} — ${
-                                    c.converted ? c.converted.toFixed(2) : c.price
-                                } ${c.currency}`}
-                                secondary={`${c.description} (${
-                                    c.dateISO ? c.dateISO.split("T")[0] : ""
-                                })`}
+                                primary={`${c.category} — ${c.sum.toFixed(2)} ${c.currency}`}
+                                secondary={`${c.description} (${c.dateISO ? c.dateISO.split("T")[0] : ""})`}
                             />
                         </ListItem>
                         <Divider />

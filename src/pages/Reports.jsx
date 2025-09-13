@@ -35,7 +35,7 @@ export default function Reports({ db, defaultCurrency }) {
             <Typography variant="h5">Monthly Pie Report</Typography>
             <Stack direction="row" spacing={2} sx={{ my: 2 }}>
                 <TextField type="number" label="Year" value={year} onChange={e=>setYear(Number(e.target.value))} />
-                <TextField type="number" label="Month" value={month} onChange={e=>setMonth(Number(e.target.value))} />
+                <TextField type="number" label="Month" value={month} onChange={e=>setMonth(Number(e.target.value))} inputProps={{min: 1, max:12}} />
                 <TextField select label="Currency" value={currency} onChange={e=>setCurrency(e.target.value)}>
                     {currencies.map(c=> <MenuItem key={c} value={c}>{c}</MenuItem>)}
                 </TextField>

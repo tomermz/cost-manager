@@ -41,8 +41,8 @@
             return sum;
         }
         // rates are flat numbers (e.g. USD:1, ILS:3.4) meaning 1 unit of currency * rate => USD
-        const inUSD = sum * rFrom;
-        return inUSD / rTo;
+        const inUSD = sum / rFrom;
+        return inUSD * rTo;
     }
 
     function openCostsDB(name, version) {
